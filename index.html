@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Page</title>
+    <style>
+        /* Targeting the main div */
+        .warpper {
+            width: 70%;
+            background-color: lightgray;
+            margin: 0 auto;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+
+        /* Targeting each section element */
+        section {
+            width: 65%;
+            background-color: rgb(171, 171, 171);
+            border: 2px solid rgb(171, 171, 171);
+            margin: 20px auto;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Targeting both the main div and section element */
+        div,
+        section {
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Targeting the div with class value of "go" */
+        .go {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="warpper">
+        <h1 id="top">Basic Geometry</h1>
+        <p>In this section, we are going to find the Area of some two-dimension
+            shapes</p>
+        <p>You can click on any shape below:</p>
+        <ul>
+            <li><a href="#circle">Circle</a></li>
+            <li><a href="#triangle">Triangle</a></li>
+            <li><a href="#square">Square</a></li>
+            <li><a href="#rectangle">Rectangle</a></li>
+        </ul>
+        <section id="circle">
+            <h2>Circle Area</h2>
+            <div class="input">
+                <label for="radius">Enter the value of the circle's radius:</label>
+                <input type="text" id="radius">
+            </div>
+            <div class="output">
+                <label for="circle_area">Result:</label>
+                <input type="text" id="circle_area" readonly></inpute>
+            </div>
+            <hr>
+            <button onclick="circle_calculate()">Calculate</button>
+        </section>
+        <div class="go-top">
+            <a href="#top">Go to top</a>
+        </div>
+        <section id="triangle">
+            <h2>Triangle Area</h2>
+            <div class="input">
+                <label for="radius">Enter the value of the triangle's edge:</label>
+                <input type="text" id="base">
+                <input type="text" id="hight">
+            </div>
+            <div class="output">
+                <label for="triangle_area">Result:</label>
+                <input type="text" id="triangle_area" readonly></inpute>
+            </div>
+            <hr>
+            <button onclick="triangle_calculate()">Calculate</button>
+        </section>
+        <div class="go-top">
+            <a href="#top">Go to top</a>
+        </div>
+        <section id="square">
+            <h2>Square Area</h2>
+            <div class="input">
+                <label for="radius">Enter the value of the square side:</label>
+                <input type="text" id="side">
+            </div>
+            <div class="output">
+                <label for="square_area">Result:</label>
+                <input type="text" id="square_area" readonly></inpute>
+            </div>
+            <hr>
+            <button onclick="square_calculate()">Calculate</button>
+        </section>
+        <div class="go-top">
+            <a href="#top">Go to top</a>
+        </div>
+        <section id="rectangle">
+            <h2>Circle Area</h2>
+            <div class="input">
+                <label for="radius">Enter the value of the rectangle's height and width:</label>
+                <input type="text" id="height">
+                <input type="text" id="width">
+            </div>
+            <div class="output">
+                <label for="rectangle_area">Result:</label>
+                <input type="text" id="rectangle_area" readonly></inpute>
+            </div>
+            <hr>
+            <button onclick="rectangle_calculate()">Calculate</button>
+        </section>
+        <div class="go-top">
+            <a href="#top">Go to top</a>
+        </div>
+    </div>
+
+    <script>
+        function circle_calculate() {
+            let radius = document.getElementById("radius").value;
+            let circle_area = Math.PI * radius * radius;
+            document.getElementById("circle_area").value = circle_area;
+        }
+        function triangle_calculate() {
+            let base = document.getElementById("base").value;
+            let hight = document.getElementById("hight").value;
+            let triangle_area = 0.5 * base * hight;
+            document.getElementById("triangle_area").value = triangle_area;
+        }
+        function square_calculate() {
+            let side = document.getElementById("side").value;
+            let square_area = side * side;
+            document.getElementById("square_area").value = square_area;
+        }
+        function rectangle_calculate() {
+            let height = document.getElementById("height").value;
+            let width = document.getElementById("width").value;
+            let rectangle_area = height * width;
+            document.getElementById("rectangle_area").value = rectangle_area;
+        }
+
+    </script>
+</body>
+
+</html>
